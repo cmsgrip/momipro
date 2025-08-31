@@ -19,7 +19,8 @@ wp-config.php
 /wp-content/blogs.dir/
 
 # Plugins and Themes
-/wp-content/plugins/
+# Ignore all plugins except our custom plugin
+/wp-content/plugins/*
 !/wp-content/plugins/momipro-customizations/
 /wp-content/themes/twentytwenty*
 
@@ -37,3 +38,6 @@ Thumbs.db
 
 # Node
 node_modules
+
+# Screenshots
+ScreenShots/
