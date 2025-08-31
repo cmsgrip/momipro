@@ -27,7 +27,7 @@ body {
     margin-left: -15px;
 }
 
-.col-md-4, .col-md-6, .col-md-8, .col-md-12 {
+.col-md-3, .col-md-4, .col-md-6, .col-md-8, .col-md-12 {
     position: relative;
     width: 100%;
     padding-right: 15px;
@@ -35,6 +35,10 @@ body {
 }
 
 @media (min-width: 768px) {
+    .col-md-3 {
+        flex: 0 0 25%;
+        max-width: 25%;
+    }
     .col-md-4 {
         flex: 0 0 33.333333%;
         max-width: 33.333333%;
@@ -218,4 +222,56 @@ h2 {
 .accordion-item.active .accordion-content {
     max-height: 1000px; /* Adjust as needed */
     padding-bottom: 15px;
+}
+
+/*--------------------------------------------------------------
+# Homepage Sections
+--------------------------------------------------------------*/
+.front-page .hero-section .display-4 {
+    font-size: 4rem;
+}
+
+.btn-secondary {
+    color: #fff;
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+    border-color: #545b62;
+}
+
+.featured-categories-section .category-box {
+    padding: 20px;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    margin-bottom: 30px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.featured-categories-section .category-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.featured-categories-section .category-box img {
+    margin-bottom: 20px;
+    max-height: 150px;
+    width: auto;
+}
+
+.btn-outline-primary {
+    color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-outline-primary:hover {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.vendor-cta-section {
+    padding: 100px 0;
 }
