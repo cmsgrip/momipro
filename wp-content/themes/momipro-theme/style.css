@@ -287,6 +287,10 @@ h2 {
     z-index: 1000;
     background-color: #fff;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
 }
 
 body.admin-bar .site-header {
@@ -322,6 +326,37 @@ body {
 
 #primary-menu > li > a:hover:after {
     width: 100%;
+}
+
+.site-branding {
+    flex-shrink: 0;
+}
+
+.site-logo {
+    max-height: 60px; /* Adjust as needed */
+    width: auto;
+}
+
+#site-navigation {
+    width: 100%;
+}
+
+/* "Become a Vendor" Button Styling */
+#primary-menu .btn-vendor a {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+#primary-menu .btn-vendor a:hover {
+    background-color: #0056b3;
+    color: #fff;
+    text-shadow: none; /* Remove neon effect from button */
+}
+
+#primary-menu .btn-vendor a:after {
+    display: none; /* Remove neon border from button */
 }
 
 /*--------------------------------------------------------------
@@ -400,8 +435,13 @@ body {
 /* Evenly spaced menu items */
 .main-navigation ul#primary-menu {
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-end; /* Align items to the right */
+    align-items: center;
     width: 100%;
+}
+
+.main-navigation ul#primary-menu > li {
+    margin-left: 20px; /* Add some space between menu items */
 }
 
 /* Hide default sub-menu dropdown arrows */

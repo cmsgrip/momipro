@@ -1,0 +1,17 @@
+<svg width="200" height="60" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .momi-text {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-size: 40px;
+      fill: #333;
+    }
+    .pro-text {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-size: 40px;
+      font-weight: 700;
+      fill: #007bff;
+    }
+  </style>
+  <text x="10" y="45" class="momi-text">Momi</text>
+  <text x="105" y="45" class="pro-text">Pro</text>
+</svg>
