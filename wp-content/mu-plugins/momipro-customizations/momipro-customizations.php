@@ -85,3 +85,67 @@ function momipro_save_kyc_fields_from_settings( $store_id, $dokan_settings ) {
 
     update_user_meta( $store_id, 'dokan_profile_settings', $dokan_settings );
 }
+
+// Create custom pages on theme activation
+add_action( 'after_switch_theme', 'momipro_create_pages' );
+
+function momipro_create_pages() {
+    $pages = array(
+        'vendor-landing' => array(
+            'title' => 'Become a Vendor',
+            'content' => '<!-- wp:paragraph --><p>This is a placeholder for the vendor landing page content. You can edit this page in the WordPress admin and add your own content.</p><!-- /wp:paragraph -->',
+            'template' => 'page-templates/vendor-landing.php'
+        ),
+        'about-us' => array(
+            'title' => 'About Us',
+            'content' => '<!-- wp:paragraph --><p>This is a placeholder for the about us page content. You can edit this page in the WordPress admin and add your own content.</p><!-- /wp:paragraph -->',
+            'template' => 'page-templates/about-us.php'
+        ),
+        'contact-us' => array(
+            'title' => 'Contact Us',
+            'content' => '<!-- wp:paragraph --><p>This is a placeholder for the contact us page content. You can edit this page in the WordPress admin and add your own content.</p><!-- /wp:paragraph -->',
+            'template' => 'page-templates/contact-us.php'
+        ),
+        'blog' => array(
+            'title' => 'Blog',
+            'content' => ''
+        ),
+        'faq' => array(
+            'title' => 'Help / FAQ',
+            'content' => '<!-- wp:paragraph --><p>This is a placeholder for the FAQ page content. You can edit this page in the WordPress admin and add your own content.</p><!-- /wp:paragraph -->',
+            'template' => 'page-templates/faq.php'
+        ),
+        'terms-of-service' => array(
+            'title' => 'Terms of Service',
+            'content' => '<!-- wp:paragraph --><p>This is a placeholder for the terms of service. Please replace this with your own terms of service.</p><!-- /wp:paragraph -->'
+        ),
+        'privacy-policy' => array(
+            'title' => 'Privacy Policy',
+            'content' => '<!-- wp:paragraph --><p>This is a placeholder for the privacy policy. Please replace this with your own privacy policy.</p><!-- /wp:paragraph -->'
+        ),
+        'return-policy' => array(
+            'title' => 'Return Policy',
+            'content' => '<!-- wp:paragraph --><p>This is a placeholder for the return policy. Please replace this with your own return policy.</p><!-- /wp:paragraph -->'
+        )
+    );
+
+    foreach ( $pages as $slug => $page ) {
+        // Check if the page already exists
+        if ( null == get_page_by_path( $slug ) ) {
+            $new_page = array(
+                'post_type' => 'page',
+                'post_title' => $page['title'],
+                'post_content' => $page['content'],
+                'post_status' => 'publish',
+                'post_author' => 1,
+                'post_name' => $slug
+            );
+
+            $page_id = wp_insert_post( $new_page );
+
+            if ( ! empty( $page['template'] ) ) {
+                update_post_meta( $page_id, '_wp_page_template', $page['template'] );
+            }
+        }
+    }
+}

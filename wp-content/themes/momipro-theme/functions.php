@@ -64,3 +64,24 @@ function momipro_theme_scripts() {
 	wp_enqueue_style( 'momipro-theme-style', get_stylesheet_uri() );
 }
 add_action( 'wp_enqueue_scripts', 'momipro_theme_scripts' );
+
+/**
+ * Add custom scripts to the footer.
+ */
+function momipro_theme_footer_scripts() {
+    if ( is_page_template( 'page-templates/faq.php' ) ) {
+        ?>
+        <script type="text/javascript">
+            document.addEventListener('DOMContentLoaded', function() {
+                var accordionHeaders = document.querySelectorAll('.accordion-header');
+                accordionHeaders.forEach(function(header) {
+                    header.addEventListener('click', function() {
+                        this.parentElement.classList.toggle('active');
+                    });
+                });
+            });
+        </script>
+        <?php
+    }
+}
+add_action( 'wp_footer', 'momipro_theme_footer_scripts' );
