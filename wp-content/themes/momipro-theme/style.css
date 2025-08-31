@@ -301,9 +301,27 @@ body {
     transition: all 0.3s ease-in-out;
 }
 
-#primary-menu a:hover {
-    color: #007bff;
-    text-shadow: 0 0 5px #007bff, 0 0 10px #007bff, 0 0 15px #007bff;
+/* New Neon Border Hover Effect */
+#primary-menu > li > a {
+    position: relative;
+    padding-bottom: 10px;
+}
+
+#primary-menu > li > a:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: #007bff;
+    box-shadow: 0 0 10px #007bff, 0 0 20px #007bff;
+    transition: width 0.3s ease-in-out;
+}
+
+#primary-menu > li > a:hover:after {
+    width: 100%;
 }
 
 /*--------------------------------------------------------------
@@ -374,4 +392,85 @@ body {
 #crumbs .current {
     font-weight: 700;
     color: #333;
+}
+
+/*--------------------------------------------------------------
+# Mega Menu
+--------------------------------------------------------------*/
+/* Evenly spaced menu items */
+.main-navigation ul#primary-menu {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+/* Hide default sub-menu dropdown arrows */
+.main-navigation .menu-item-has-children .dropdown-toggle {
+    display: none;
+}
+
+/* Mega menu container */
+.main-navigation .menu-item-has-children .sub-menu {
+    display: none; /* Hide default dropdown */
+}
+
+.main-navigation .menu-item-has-children .description {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    padding: 30px;
+    text-align: left;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.main-navigation .menu-item-has-children:hover > .description {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Mega menu content styling */
+.mega-menu-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.mega-menu-column {
+    width: 23%;
+    padding: 0 15px;
+}
+
+.mega-menu-column h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.mega-menu-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: block; /* Override flex from parent */
+}
+
+.mega-menu-column ul li {
+    margin-bottom: 10px;
+    display: block; /* Override flex from parent */
+}
+
+.mega-menu-column ul li a {
+    color: #666;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+.mega-menu-column ul li a:hover {
+    color: #007bff;
 }

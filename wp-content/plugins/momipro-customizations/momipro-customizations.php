@@ -295,3 +295,15 @@ function momipro_get_breadcrumbs() {
         echo '</div>';
     }
 }
+
+/**
+ * Allow HTML in menu descriptions
+ */
+remove_filter('nav_menu_description', 'strip_tags');
+add_filter( 'wp_setup_nav_menu_item', 'momipro_wp_setup_nav_menu_item' );
+function momipro_wp_setup_nav_menu_item( $menu_item ) {
+    if ( isset( $menu_item->post_content ) ) {
+        $menu_item->description = apply_filters( 'nav_menu_description', $menu_item->post_content );
+    }
+    return $menu_item;
+}
