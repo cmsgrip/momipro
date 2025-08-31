@@ -39,4 +39,12 @@
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 
+	<div class="container breadcrumb-container">
+		<?php
+		if ( function_exists( 'momipro_get_breadcrumbs' ) ) {
+			momipro_get_breadcrumbs();
+		}
+		?>
+	</div>
+
 	<div id="content" class="site-content">

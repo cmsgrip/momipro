@@ -275,3 +275,103 @@ h2 {
 .vendor-cta-section {
     padding: 100px 0;
 }
+
+/*--------------------------------------------------------------
+# Header & Navigation
+--------------------------------------------------------------*/
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+body.admin-bar .site-header {
+    top: 32px;
+}
+
+body {
+    padding-top: 80px; /* Adjust this value based on your header's height */
+}
+
+#primary-menu a {
+    transition: all 0.3s ease-in-out;
+}
+
+#primary-menu a:hover {
+    color: #007bff;
+    text-shadow: 0 0 5px #007bff, 0 0 10px #007bff, 0 0 15px #007bff;
+}
+
+/*--------------------------------------------------------------
+# Parallax Scrolling
+--------------------------------------------------------------*/
+.hero-section {
+    background-image: url('https://via.placeholder.com/1920x1080.png?text=MomiPro+Hero+Image');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+}
+
+.hero-section h1, .hero-section .lead {
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.site-footer {
+    background-image: url('https://via.placeholder.com/1920x500.png?text=MomiPro+Footer');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    padding: 80px 0;
+}
+
+.site-footer a {
+    color: #fff;
+}
+
+/* This creates a simple parallax effect for the footer */
+.site {
+    overflow: hidden;
+}
+
+.site-content {
+    background-color: #fff;
+    position: relative;
+    z-index: 1;
+}
+
+
+/*--------------------------------------------------------------
+# Breadcrumbs
+--------------------------------------------------------------*/
+.breadcrumb-container {
+    padding: 20px 15px;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #eee;
+}
+
+#crumbs {
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+#crumbs a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+#crumbs a:hover {
+    text-decoration: underline;
+}
+
+#crumbs .current {
+    font-weight: 700;
+    color: #333;
+}
