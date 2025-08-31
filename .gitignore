@@ -1,24 +1,38 @@
-# WordPress
+# WordPress core
+/wp-admin/
+/wp-includes/
+/wp-*.php
+/index.php
+/license.txt
+/readme.html
+/xmlrpc.php
+
+# Config files
 wp-config.php
 .htaccess
-wp-content/uploads
-wp-content/upgrade
-wp-content/cache
 
-# Docker
+# Media and cache
+/wp-content/uploads/
+/wp-content/upgrade/
+/wp-content/cache/
+/wp-content/backups/
+/wp-content/blogs.dir/
 
+# Plugins and Themes
+/wp-content/plugins/
+/wp-content/themes/twentytwenty*
+
+# Log files
+*.log
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
 
 # Node
 node_modules
-
-# Ignore all files in the root except for the WordPress core files
-/*
-!wp-admin
-!wp-content
-!wp-includes
-!wp-*.php
-!index.php
-!license.txt
-!readme.html
-!xmlrpc.php
-!.gitignore
